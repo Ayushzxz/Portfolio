@@ -1,0 +1,401 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #121212;
+  color: #f9fafb;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background: #f9fafb;
+  color: #121212;
+}
+
+/* Navigation Styles */
+nav {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+body.light-mode nav {
+  background: #e6dbf7c7;
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+body.light-mode nav ul li a {
+  color: #121212;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ff416c;
+  transition: width 0.3s ease;
+}
+
+body.light-mode nav ul li a::after {
+  background: #ff4b2b;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li:hover {
+  transform: scale(1.05);
+}
+
+/* Mode Toggle Button */
+#mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+body.light-mode #mode-toggle {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body.light-mode #mode-toggle:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#mode-toggle .fa-sun,
+#mode-toggle .fa-moon {
+  color: #f9fafb;
+  font-size: 1.2rem;
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.light-mode #mode-toggle .fa-sun {
+  opacity: 0;
+  transform: rotate(360deg);
+}
+
+body.light-mode #mode-toggle .fa-moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url("bg1.jpg") no-repeat center center/cover;
+  transition: background 0.5s ease;
+}
+
+body.light-mode .hero {
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    url("bg2.jpg") no-repeat center center/cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #f9fafb;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode .hero-content {
+  color: #121212;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin: 0;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  animation: fadeInUp 1.2s ease;
+}
+
+#contact-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.3rem;
+  color: #f9fafb;
+  background: #ff416c;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.6);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+body.light-mode #contact-button {
+  background: #ff4b2b;
+  box-shadow: 0 4px 15px rgba(255, 75, 43, 0.6);
+}
+
+#contact-button:hover {
+  background: #ff4b2b;
+  transform: scale(1.1);
+}
+
+/* Section Styles */
+section {
+  padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 1000px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: background 0.5s ease;
+}
+
+body.light-mode section {
+  background: #e4d7f6e6;
+  box-shadow: 0 6px 30px #e4d7f6e6;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  color: #ff416c;
+}
+
+body.light-mode section h2 {
+  color: #ff4b2b;
+}
+
+.section-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.section-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+body.light-mode .section-content p {
+  color: #333;
+}
+
+/* Contact Form */
+.contact-section {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4rem 2rem;
+  border-radius: 10px;
+}
+
+body.light-mode .contact-section {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.contact-section h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #ff416c;
+}
+
+body.light-mode .contact-section h2 {
+  color: #ff4b2b;
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f9fafb;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
+  color: #121212;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ff416c;
+  outline: none;
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+  border-color: #ff4b2b;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #ff416c;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #f9fafb;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.6);
+}
+
+body.light-mode .btn-primary {
+  background: #ff4b2b;
+  box-shadow: 0 4px 15px rgba(255, 75, 43, 0.6);
+}
+
+.btn-primary:hover {
+  background: #ff4b2b;
+  transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: #f9fafb;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode footer {
+  background: #e8dff8;
+  box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.5);
+}
+body.light-mode footer p {
+  color: #121212;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typewriter Effect */
+#typewriter {
+  display: inline;
+  font-weight: bold;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.5rem;
+  background: #f9fafb;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+body.light-mode .cursor {
+  background: #121212;
+}
+
+.cursor-blink {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* 3D Cube and Skills Section */
+#skill-canvas {
+  width: 100%;
+  height: 300px;
+  display: block;
+  margin: 20px auto;
+  background: transparent;
+  pointer-events: none;
+}
